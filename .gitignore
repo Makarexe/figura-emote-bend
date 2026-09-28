@@ -1,0 +1,22 @@
+# Gradle
+.gradle/
+build/
+
+# NeoForge run directories
+run-client/
+run-server/
+
+# IDE
+.idea/
+*.iml
+out/
+
+# Claude Code local session state
+.claude/
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Моды для локального тестового запуска (runClient), в git не кладём
+run-mods/

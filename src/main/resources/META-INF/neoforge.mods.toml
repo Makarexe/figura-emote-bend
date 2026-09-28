@@ -1,0 +1,52 @@
+modLoader = "javafml"
+loaderVersion = "${loader_version_range}"
+license = "${mod_license}"
+
+[[mixins]]
+config = "figurabend.mixins.json"
+
+[[mods]]
+modId = "${mod_id}"
+version = "${mod_version}"
+displayName = "${mod_name}"
+authors = "${mod_authors}"
+description = '''${mod_description}'''
+# Чисто клиентский мод: сервер и другие игроки без него не нужны.
+displayTest = "IGNORE_ALL_VERSION"
+
+[[dependencies."${mod_id}"]]
+    modId = "neoforge"
+    type = "required"
+    versionRange = "${neo_version_range}"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId = "minecraft"
+    type = "required"
+    versionRange = "${minecraft_version_range}"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies."${mod_id}"]]
+    modId = "figura"
+    type = "required"
+    versionRange = "[0.1.5,)"
+    ordering = "AFTER"
+    side = "CLIENT"
+
+# playerAnimator и bendy-lib приходят вместе с Emotecraft (jar-in-jar) — именно они
+# двигают и сгибают модель игрока.
+[[dependencies."${mod_id}"]]
+    modId = "playeranimator"
+    type = "required"
+    versionRange = "*"
+    ordering = "AFTER"
+    side = "CLIENT"
+
+[[dependencies."${mod_id}"]]
+    modId = "emotecraft"
+    type = "optional"
+    versionRange = "*"
+    ordering = "AFTER"
+    side = "CLIENT"
